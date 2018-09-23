@@ -1,0 +1,776 @@
+{
+	"Program": {
+		"prefix": "program",
+		"body": [
+			"program {",
+			"\t$0",
+			"}"
+		],
+		"description": "program structure"
+	},
+	"Interactive Program": {
+		"prefix": "interactive program",
+		"body": [
+			"interactive program {",
+			"\tINIT -> {${1:VaciarTablero()}}",
+			"\tTIMEOUT(${2:5000}) -> {${3:VaciarTablero()}}",
+			"\tK_ARROW_UP -> {${4:Mover(Norte)}}",
+			"\tK_ARROW_LEFT -> {${5:Mover(Oeste)}}",
+			"\tK_ARROW_DOWN -> {${6:Mover(Sur)}}",
+			"\tK_ARROW_RIGHT-> {${7:Mover(Este)}}",
+			"\tK_ENTER -> {${8:Poner(Rojo)}}",
+			"\tK_BACKSPACE -> {${9:Sacar(Rojo)}}",
+			"\t$10",
+			"}"
+		],
+		"description": "interactive program structure"
+	},
+	"Procedure": {
+		"prefix": "procedure",
+		"body": [
+			"procedure ${1:MyProcedure}(${2:params}) {",
+			"\t$3",
+			"}"
+		],
+		"description": "procedure definition"
+	},
+	"Function": {
+		"prefix": "function",
+		"body": [
+			"function ${1:myFunction}(${2:params}) {",
+			"\t$4",
+			"\treturn ($3)",
+			"}"
+		],
+		"description": "function definition"
+	},
+	"Return": {
+		"prefix": "return",
+		"body": ["return ($1)"],
+		"description": "return construct"
+	},
+	"Type": {
+		"prefix": "type",
+		"body": [
+			"type ${1:TypeName} is {$2|record,variant|} {",
+			"\t$3",
+			"}"
+		],
+		"description": "type definition"
+	},
+	"Type Variant": {
+		"prefix": "type:variant",
+		"body": [
+			"type ${1:TypeName} is variant {",
+			"\tcase ${2:ConstructorName} {$3}",
+			"\tcase ${4:ConstructorName} {$5}",
+			"\tcase ${6:ConstructorName} {$7}",
+			"}"
+		],
+		"description": "variant type definition"
+	},
+	"Type Record": {
+		"prefix": "type:record",
+		"body": [
+			"type ${1:TypeName} is record {",
+			"\tfield ${2:fieldName}",
+			"\tfield ${3:fieldName}",
+			"\tfield ${4:fieldName}",
+			"}"
+		],
+		"description": "record type definition"
+	},
+	"Record": {
+		"prefix": "record",
+		"body": [
+			"record"
+		],
+		"description": "recorJ keyword"
+	},
+	"Variant": {
+		"prefix": "variant",
+		"body": [
+			"variant"
+		],
+		"description": "variant keyword"
+	},
+	"Case": {
+		"prefix": "case",
+		"body": [
+			"case {$1:ConstructorName} {$2}"
+		],
+		"description": "case construct"
+	},
+	"Field": {
+		"prefix": "field",
+		"body": [
+			"field {$1:fieldName}"
+		],
+		"description": "field construct"
+	},
+	"If": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$2",
+			"}"
+		],
+		"description": "simple if structure"
+	},
+	"Elseif": {
+		"prefix": "elseif",
+		"body": [
+			"elseif (${1:condition}) {",
+			"\t$2",
+			"}"
+		],
+		"description": "simple elseif structure"
+	},
+	"Else": {
+		"prefix": "else",
+		"body": [
+			"else {",
+			"\t$1",
+			"}"
+		],
+		"description": "simple else structure"
+	},
+	"If Else": {
+		"prefix": "if:else",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$2",
+			"} else {",
+			"\t$3",
+			"}"
+		],
+		"description": "if structure with an else case"
+	},
+	"If Elseif Else": {
+		"prefix": "if:elseif:else",
+		"body": [
+			"if (${1:condition}) {",
+			"\t$2",
+			"elseif (${3:condition}) {",
+			"\t$4",
+			"} else {",
+			"\t$5",
+			"}"
+		],
+		"description": "if structure with elif and else cases"
+	},
+	"Switch": {
+		"prefix": "switch",
+		"body": [
+			"switch (${1:element}) to {",
+			"\t${$2:value} -> {$3}",
+			"\t${$4:value} -> {$5}",
+			"\t_ -> {$6}",
+			"}"
+		],
+		"description": "switch pattern matching structure"
+	},
+	"Choose": {
+		"prefix": "choose",
+		"body": [
+			"choose",
+			"\t${1:value} when ($2)",
+			"\t${3:value} when ($4)",
+			"\t${5:value} otherwise",
+			"}"
+		],
+		"description": "choose expresion structure"
+	},
+	"When": {
+		"prefix": "when",
+		"body": [
+			"when ($1)"
+		],
+		"description": "when condition construct"
+	},
+	"Otherwise": {
+		"prefix": "otherwise",
+		"body": [
+			"otherwise"
+		],
+		"description": "otherwise condition construct"
+	},
+	"Repeat": {
+		"prefix": "repeat",
+		"body": [
+			"repeat (${1:times}) {",
+			"\t$2",
+			"}"
+		],
+		"description": "repeat structure"
+	},
+	"While": {
+		"prefix": "while",
+		"body": [
+			"while (${1:condition}) {",
+			"\t$2",
+			"}"
+		],
+		"description": "while structure"
+	},
+	"Foreach": {
+		"prefix": "foreach",
+		"body": [
+			"foreach {$1:index} in ${2:list} {",
+			"\t$3",
+			"}"
+		],
+		"description": "foreach structure"
+	},
+	"Let": {
+		"prefix": "let",
+		"body": [
+			"let "
+		],
+		"description": "let keyword"
+	},
+	"Not": {
+		"prefix": "not",
+		"body": [
+			"not "
+		],
+		"description": "not keyword"
+	},
+	"Mod": {
+		"prefix": "mod",
+		"body": [
+			"mod "
+		],
+		"description": "moJ keyword"
+	},
+	"Div": {
+		"prefix": "div",
+		"body": [
+			"div "
+		],
+		"description": "div keyword"
+	},
+	"Mover": {
+		"prefix": "Mover",
+		"body": ["Mover(${1:dirección})"],
+		"description": "Mover command"
+	},
+	"Poner": {
+		"prefix": "Poner",
+		"body": ["Poner(${1:color})"],
+		"description": "Poner command"
+	},
+	"Sacar": {
+		"prefix": "Sacar",
+		"body": ["Sacar(${1:color})"],
+		"description": "Sacar command"
+	},
+	"IrAlBorde": {
+		"prefix": "IrAlBorde",
+		"body": ["IrAlBorde(${1:dirección})"],
+		"description": "IrAlBorde command"
+	},
+	"Vaciar Tabler": {
+		"prefix": "VaciarTablero",
+		"body": ["VaciarTablero()"],
+		"description": "VaciarTablero command"
+	},
+	"BOOM": {
+		"prefix": "BOOM",
+		"body": ["BOOM(\"${1:ERROR MESSAGE}\")"],
+		"description": "BOOM command"
+	},
+	"puedeMover": {
+		"prefix": "puedeMover",
+		"body": ["puedeMover(${1:dirección})"],
+		"description": "puedeMover function"
+	},
+	"hayBolitas": {
+		"prefix": "hayBolitas",
+		"body": ["hayBolitas(${1:color})"],
+		"description": "hayBolitas function"
+	},
+	"nroBolitas": {
+		"prefix": "nroBolitas",
+		"body": ["nroBolitas(${1:color})"],
+		"description": "nroBolitas function"
+	},
+	"siguiente": {
+		"prefix": "siguiente",
+		"body": ["siguiente(${1:elemento})"],
+		"description": "siguiente function"
+	},
+	"opuesto": {
+		"prefix": "opuesto",
+		"body": ["opuesto(${1:elemento})"],
+		"description": "opuesto function"
+	},
+	"previo": {
+		"prefix": "previo",
+		"body": ["previo(${1:elemento})"],
+		"description": "previo function"
+	},
+	"minBool": {
+		"prefix": "minBool",
+		"body": ["minBool()"],
+		"description": "minBool function"
+	},
+	"maxBool": {
+		"prefix": "maxBool",
+		"body": ["maxBool()"],
+		"description": "maxBool function"
+	},
+	"minDir": {
+		"prefix": "minDir",
+		"body": ["minDir()"],
+		"description": "minDir function"
+	},
+	"maxDir": {
+		"prefix": "maxDir",
+		"body": ["maxDir()"],
+		"description": "maxDir function"
+	},
+	"minColor": {
+		"prefix": "minColor",
+		"body": ["minColor()"],
+		"description": "minColor function"
+	},
+	"maxColor": {
+		"prefix": "maxColor",
+		"body": ["maxColor()"],
+		"description": "maxColor function"
+	},
+	"primero": {
+		"prefix": "primero",
+		"body": ["primero(${1:lista})"],
+		"description": "primero function"
+	},
+	"ultimo": {
+		"prefix": "ultimo",
+		"body": ["ultimo(${1:lista})"],
+		"description": "ultimo function"
+	},
+	"resto": {
+		"prefix": "resto",
+		"body": ["resto(${1:lista})"],
+		"description": "resto function"
+	},
+	"comienzo": {
+		"prefix": "comienzo",
+		"body": ["comienzo(${1:lista})"],
+		"description": "comienzo function"
+	},
+	"TIMEOUT": {
+		"prefix": "TIMEOUT",
+		"body": [
+			"TIMEOUT(${1:5000}) -> {$2}"
+		],
+		"description": "timeout match construct"
+	},
+	"INIT": {
+		"prefix": "INIT",
+		"body": [
+			"INIT -> {$1}"
+		],
+		"description": "init match construct"
+	},
+	"K_A": {
+		"prefix": "K_A",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}A -> {$2}"
+		],
+		"description": "A key match construct"
+	},
+	"K_B": {
+		"prefix": "K_B",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}B -> {$2}"
+		],
+		"description": "B key match construct"
+	},
+	"K_C": {
+		"prefix": "K_C",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}C -> {$2}"
+		],
+		"description": "C key match construct"
+	},
+	"K_D": {
+		"prefix": "K_D",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}D -> {$2}"
+		],
+		"description": "D key match construct"
+	},
+	"K_E": {
+		"prefix": "K_E",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}E -> {$2}"
+		],
+		"description": "E key match construct"
+	},
+	"K_F": {
+		"prefix": "K_F",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F -> {$2}"
+		],
+		"description": "F key match construct"
+	},
+	"K_G": {
+		"prefix": "K_G",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}G -> {$2}"
+		],
+		"description": "G key match construct"
+	},
+	"K_H": {
+		"prefix": "K_H",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}H -> {$2}"
+		],
+		"description": "H key match construct"
+	},
+	"K_I": {
+		"prefix": "K_I",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}I -> {$2}"
+		],
+		"description": "I key match construct"
+	},
+	"K_J": {
+		"prefix": "K_J",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}J -> {$2}"
+		],
+		"description": "J key match construct"
+	},
+	"K_K": {
+		"prefix": "K_K",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}K -> {$2}"
+		],
+		"description": "K key match construct"
+	},
+	"K_L": {
+		"prefix": "K_L",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}L -> {$2}"
+		],
+		"description": "L key match construct"
+	},
+	"K_M": {
+		"prefix": "K_M",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}M -> {$2}"
+		],
+		"description": "M key match construct"
+	},
+	"K_N": {
+		"prefix": "K_N",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}N -> {$2}"
+		],
+		"description": "N key match construct"
+	},
+	"K_O": {
+		"prefix": "K_O",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}O -> {$2}"
+		],
+		"description": "O key match construct"
+	},
+	"K_P": {
+		"prefix": "K_P",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}P -> {$2}"
+		],
+		"description": "P key match construct"
+	},
+	"K_Q": {
+		"prefix": "K_Q",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}Q -> {$2}"
+		],
+		"description": "Q key match construct"
+	},
+	"K_R": {
+		"prefix": "K_R",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}R -> {$2}"
+		],
+		"description": "R key match construct"
+	},
+	"K_S": {
+		"prefix": "K_S",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}S -> {$2}"
+		],
+		"description": "S key match construct"
+	},
+	"K_T": {
+		"prefix": "K_T",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}T -> {$2}"
+		],
+		"description": "T key match construct"
+	},
+	"K_U": {
+		"prefix": "K_U",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}U -> {$2}"
+		],
+		"description": "U key match construct"
+	},
+	"K_V": {
+		"prefix": "K_V",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}V -> {$2}"
+		],
+		"description": "V key match construct"
+	},
+	"K_W": {
+		"prefix": "K_W",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}W -> {$2}"
+		],
+		"description": "W key match construct"
+	},
+	"K_X": {
+		"prefix": "K_X",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}X -> {$2}"
+		],
+		"description": "X key match construct"
+	},
+	"K_Y": {
+		"prefix": "K_Y",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}Y -> {$2}"
+		],
+		"description": "Y key match construct"
+	},
+	"K_Z": {
+		"prefix": "K_Z",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}Z -> {$2}"
+		],
+		"description": "Z key match construct"
+	},
+	"K_1": {
+		"prefix": "K_1",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}1 -> {$2}"
+		],
+		"description": "1 key match construct"
+	},
+	"K_2": {
+		"prefix": "K_2",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}2 -> {$2}"
+		],
+		"description": "2 key match construct"
+	},
+	"K_3": {
+		"prefix": "K_3",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}3 -> {$2}"
+		],
+		"description": "3 key match construct"
+	},
+	"K_4": {
+		"prefix": "K_4",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}4 -> {$2}"
+		],
+		"description": "4 key match construct"
+	},
+	"K_5": {
+		"prefix": "K_5",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}5 -> {$2}"
+		],
+		"description": "5 key match construct"
+	},
+	"K_6": {
+		"prefix": "K_6",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}6 -> {$2}"
+		],
+		"description": "6 key match construct"
+	},
+	"K_7": {
+		"prefix": "K_7",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}7 -> {$2}"
+		],
+		"description": "7 key match construct"
+	},
+	"K_8": {
+		"prefix": "K_8",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}8 -> {$2}"
+		],
+		"description": "8 key match construct"
+	},
+	"K_9": {
+		"prefix": "K_9",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}9 -> {$2}"
+		],
+		"description": "9 key match construct"
+	},
+	"K_0": {
+		"prefix": "K_0",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}0 -> {$2}"
+		],
+		"description": "0 key match construct"
+	},
+	"K_F1": {
+		"prefix": "K_F1",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F1 -> {$2}"
+		],
+		"description": "F1 key match construct"
+	},
+	"K_F2": {
+		"prefix": "K_F2",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F2 -> {$2}"
+		],
+		"description": "F2 key match construct"
+	},
+	"K_F3": {
+		"prefix": "K_F3",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F3 -> {$2}"
+		],
+		"description": "F3 key match construct"
+	},
+	"K_F4": {
+		"prefix": "K_F4",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F4 -> {$2}"
+		],
+		"description": "F4 key match construct"
+	},
+	"K_F5": {
+		"prefix": "K_F5",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F5 -> {$2}"
+		],
+		"description": "F5 key match construct"
+	},
+	"K_F6": {
+		"prefix": "K_F6",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F6 -> {$2}"
+		],
+		"description": "F6 key match construct"
+	},
+	"K_F7": {
+		"prefix": "K_F7",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F7 -> {$2}"
+		],
+		"description": "F7 key match construct"
+	},
+	"K_F8": {
+		"prefix": "K_F8",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F8 -> {$2}"
+		],
+		"description": "F8 key match construct"
+	},
+	"K_F9": {
+		"prefix": "K_F9",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F9 -> {$2}"
+		],
+		"description": "F9 key match construct"
+	},
+	"K_F10": {
+		"prefix": "K_F10",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F10 -> {$2}"
+		],
+		"description": "F10 key match construct"
+	},
+	"K_F11": {
+		"prefix": "K_F11",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F11 -> {$2}"
+		],
+		"description": "F11 key match construct"
+	},
+	"K_F12": {
+		"prefix": "K_F12",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F12 -> {$2}"
+		],
+		"description": "F12 key match construct"
+	},
+	"K_ARROW_UP": {
+		"prefix": "K_ARROW_UP",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_UP -> {$2}"
+		],
+		"description": "up arrow key match construct"
+	},
+	"K_ARROW_DOWN": {
+		"prefix": "K_ARROW_DOWN",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_DOWN -> {$1}"
+		],
+		"description": "down arrow key match construct"
+	},
+	"K_ARROW_LEFT": {
+		"prefix": "K_ARROW_LEFT",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_LEFT -> {$2}"
+		],
+		"description": "left arrow key match construct"
+	},
+	"K_ARROW_RIGHT": {
+		"prefix": "K_ARROW_RIGHT",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_RIGHT -> {$1}"
+		],
+		"description": "right arrow key match construct"
+	},
+	"K_ENTER": {
+		"prefix": "K_ENTER",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ENTER -> {$2}"
+		],
+		"description": "enter key up match construct"
+	},
+	"K_SPACE": {
+		"prefix": "K_SPACE",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}SPACE -> {$1}"
+		],
+		"description": "space key down match construct"
+	},
+	"K_TAB": {
+		"prefix": "K_TAB",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}TAB -> {$2}"
+		],
+		"description": "tab key up match construct"
+	},
+	"K_BACKSPACE": {
+		"prefix": "K_BACKSPACE",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}BACKSPACE -> {$1}"
+		],
+		"description": "backspace key down match construct"
+	},
+	"K_ESCAPE": {
+		"prefix": "K_ESCAPE",
+		"body": [
+			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ESCAPE -> {$2}"
+		],
+		"description": "escape key up match construct"
+	}
+}

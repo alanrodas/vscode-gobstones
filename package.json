@@ -1,0 +1,44 @@
+{
+    "name": "vscode-gobstones",
+    "displayName": "Gobstones Language Support",
+    "description": "Provides basic language support for the Gobstones didactical programming language in Visual Studio Code",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "author": "alanrodas <alanrodas@gmail.com",
+    "publisher": "alanrodas",
+    "license": "MIT LICENSE",
+    "homepage": "https://github.com/alanrodas/vscode-gobstones",
+    "bugs": {
+        "url": "https://github.com/alanrodas/vscode-gobstones/issues",
+        "email": "alanrodas@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alanrodas/vscode-gobstones.git"
+    },
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#800000",
+        "theme": "dark"
+    },
+    "categories": ["Programming Languages", "Snippets"],
+    "contributes": {
+        "languages": [{
+            "id": "gobstones",
+            "aliases": ["Gobstones", "gobstones"],
+            "extensions": ["gbs"],
+            "configuration": "./definitions/language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gobstones",
+            "scopeName": "text.gobstones",
+            "path": "./definitions/gobstones.tmLanguage.json"
+        }],
+        "snippets": [{
+                "language": "gobstones",
+                "path": "./definitions/gobstones.tmSnippet.json"
+        }]
+    }
+}

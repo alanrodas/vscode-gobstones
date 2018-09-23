@@ -1,0 +1,122 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Gobstones",
+	"scopeName": "text.gobstones",
+	"fileTypes": [".gbs"],
+	"foldingStartMarker" : "{",
+	"foldingStopMarker": "}",
+	"patterns": [{
+			"include": "#definitions" },{
+			"include": "#aux" }, {
+			"include": "#commands" },{
+			"include": "#expressions" },{
+			"include": "#functions" },{
+			"include": "#strings" },{
+			"include": "#comments" }
+	],
+	"repository": {
+		"definitions": {
+			"patterns": [{
+				"name": "storage.type.gobstones",
+				"match": "\\b(program|interactive|return)\\b"
+			},{
+				"match": "\\b(function)(\\s+)(\\w+)",
+				"captures": {
+					"1": { "name": "storage.type.gobstones" },
+					"3": { "name": "entity.name.function.gobstones" }
+				 }
+			},{
+				"match": "\\b(procedure)(\\s+)(\\w+)",
+				"captures": {
+					"1": { "name": "storage.type.gobstones" },
+					"3": { "name": "entity.name.type.gobstones" }
+				 }
+			}]
+		},
+		"commands": {
+			"patterns": [
+				{
+					"name": "keyword.control.gobstones",
+					"match": "\\b(Poner|Mover|Sacar|IrAlBorde|VaciarTablero|BOOM)\\b"
+				},{
+					"name": "keyword.control.gobstones",
+					"match": "\\b(if|elseif|else|switch|to|repeat|while|foreach|in|let)\\b"
+				},{
+					"name": "keyword.control.gobstones",
+					"match": ":="
+				}
+			]
+		},
+		"expressions": {
+			"patterns": [{
+				"name": "constant.numeric.gobstones",
+				"match": "[0-9]+"
+			},{
+				"name": "constant.language.gobstones",
+				"match": "\\b(Azul|Negro|Rojo|Verde)\\b"
+			},{
+				"name": "constant.language.gobstones",
+				"match": "\\b(Norte|Sur|Este|Oeste)\\b"
+			},{
+				"name": "constant.language.gobstones",
+				"match": "\\b(True|False)\\b"
+			}]
+		},
+		"functions": {
+			"patterns": [{
+				"name": "support.function.gobstones",
+				"match": "\\b(choose|when|otherwise)\\b"
+			},{
+				"name": "support.function.gobstones",
+				"match": "\\b(hayBolitas|nroBolitas|siguiente|opuesto|previo|puedeMover)\\b"
+			},{
+				"name": "support.function.gobstones",
+				"match": "\\b(minColor|maxColor|minDir|maxDir|minBool|maxBool)\\b"
+			},{
+				"name": "support.function.gobstones",
+				"match": "\\b(primero|ultimo|resto|comienzo)\\b"
+			},{
+				"name": "keyword.operator.gobstones",
+				"match": "(div|mod|not)"
+			},{
+				"name": "keyword.operator.gobstones",
+				"match": "(->|<-|\\+|-|\\*|\\^)"
+			},{
+				"name": "keyword.operator.gobstones",
+				"match": "(\\&\\&|\\|\\|)"
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.double.gobstones",
+				"begin": "\"",
+				"end": "\""
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.gobstones",
+				"begin": "\\/\\*",
+				"end": "\\*\\/"
+			},{
+				"name": "comment.line.double-slash.gobstones",
+				"match": "\\/\\/.*"
+			}]
+		},
+		"aux": {
+			"patterns": [{
+				"name": "entity.name.type.gobstones",
+				"match": "\\b^(aux)(\\w)+\\b"
+			},{
+				"name": "entity.name.function.gobstones",
+				"match": "\\b^(Aux)(\\w)+\\b"
+			}]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.other.gobstones",
+				"match": "\\b([a-z]|á|é|í|ó|ú|ñ)(\\w)*\\b"
+			}]
+		}
+	}
+}
