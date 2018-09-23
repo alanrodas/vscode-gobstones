@@ -1,8 +1,8 @@
 {
     "name": "vscode-gobstones",
     "displayName": "Gobstones Language Support",
-    "description": "Provides basic language support for the Gobstones didactical programming language in Visual Studio Code",
-    "version": "1.0.0",
+    "description": "Provides basic language support for the Gobstones didactic programming language in Visual Studio Code",
+    "version": "1.0.1",
     "engines": {
         "vscode": "^1.27.0"
     },

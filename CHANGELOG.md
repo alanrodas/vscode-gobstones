@@ -1,7 +1,11 @@
 # Change Log
-All notable changes to the "gobstones" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 ## [1.0.0]
-- Initial release (by alanrodas)
+- Initial release of the extension
+- Syntax highlighting
+- Brace matching
+- Snippets for common constructs and keywords
+## [1.0.1]
+- Fix typos in package.json
+- Fix logo so it looks nice in marketplace
+- Fix README typos
