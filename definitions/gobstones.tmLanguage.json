@@ -18,7 +18,7 @@
 		"definitions": {
 			"patterns": [{
 				"name": "storage.type.gobstones",
-				"match": "\\b(program|interactive|return)\\b"
+				"match": "\\b(program|interactive|return|type|is|record|variant)\\b"
 			},{
 				"match": "\\b(function)(\\s+)(\\w+)",
 				"captures": {

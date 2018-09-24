@@ -9,3 +9,6 @@
 - Fix typos in package.json
 - Fix logo so it looks nice in marketplace
 - Fix README typos
+## [1.1.0]
+- Add syntax highlighting of type definitions
+- Removed unused files
