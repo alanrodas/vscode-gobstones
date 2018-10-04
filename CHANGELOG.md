@@ -18,3 +18,5 @@
 - BOOM now appears with other color
 - A different color is given to values from definitions
 - case and field keywords are now supported
+## [1.2.1]
+- Added support for comparisson symbols

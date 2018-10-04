@@ -89,6 +89,9 @@
 			},{
 				"name": "constant.character.set.regexp",
 				"match": "(\\&\\&|\\|\\|)"
+			},{
+				"name": "constant.character.set.regexp",
+				"match": "(\\=\\=|\\/=|\\<\\>|\\>=|\\<=)"
 			}]
 		},
 		"strings": {
