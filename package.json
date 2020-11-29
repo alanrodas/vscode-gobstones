@@ -6,6 +6,9 @@
     "engines": {
         "vscode": "^1.27.0"
     },
+    "scripts": {
+        "start": "nps"
+    },
     "author": "alanrodas <alanrodas@gmail.com",
     "publisher": "alanrodas",
     "license": "MIT LICENSE",
@@ -23,43 +26,75 @@
         "color": "#800000",
         "theme": "dark"
     },
-    "categories": ["Programming Languages", "Snippets"],
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
     "contributes": {
-        "languages": [{
-            "id": "gobstones",
-            "aliases": ["Gobstones", "gobstones"],
-            "extensions": ["gbs"],
-            "configuration": "./definitions/gobstones/language-configuration.json"
-        }, {
-            "id": "gobstones-gbb",
-            "aliases": ["Gobstones Board", "gobstones board"],
-            "extensions": ["gbb"],
-            "configuration": "./definitions/gbb/language-configuration.json"
-        }, {
-            "id": "xml",
-            "extensions": ["gbk"]
-        }],
-        "grammars": [{
-            "language": "gobstones",
-            "scopeName": "text.gobstones",
-            "path": "./definitions/gobstones/gobstones.tmLanguage.json"
-        }, {
-            "language": "gobstones-gbb",
-            "scopeName": "text.gobstones-gbb",
-            "path": "./definitions/gbb/gbb.tmLanguage.json"
-        }],
-        "snippets": [{
+        "languages": [
+            {
+                "id": "gobstones",
+                "aliases": [
+                    "Gobstones",
+                    "gobstones"
+                ],
+                "extensions": [
+                    "gbs"
+                ],
+                "configuration": "./definitions/gobstones/language-configuration.json"
+            },
+            {
+                "id": "gobstones-gbb",
+                "aliases": [
+                    "Gobstones Board",
+                    "gobstones board"
+                ],
+                "extensions": [
+                    "gbb"
+                ],
+                "configuration": "./definitions/gbb/language-configuration.json"
+            },
+            {
+                "id": "xml",
+                "extensions": [
+                    "gbk"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gobstones",
+                "scopeName": "text.gobstones",
+                "path": "./definitions/gobstones/gobstones.tmLanguage.json"
+            },
+            {
+                "language": "gobstones-gbb",
+                "scopeName": "text.gobstones-gbb",
+                "path": "./definitions/gbb/gbb.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
                 "language": "gobstones",
                 "path": "./definitions/gobstones/gobstones.tmSnippet.json"
-        }, {
-            "language": "gobstones-gbb",
-            "path": "./definitions/gbb/gbb.tmSnippet.json"
-        }],
+            },
+            {
+                "language": "gobstones-gbb",
+                "path": "./definitions/gbb/gbb.tmSnippet.json"
+            }
+        ],
         "configurationDefaults": {
             "[xml]": {
-              "editor.wordWrap": "on",
-              "editor.quickSuggestions": false
+                "editor.wordWrap": "on",
+                "editor.quickSuggestions": false
             }
-          }
+        }
+    },
+    "devDependencies": {
+        "chalk": "^4.1.0",
+        "dotenv": "^8.2.0",
+        "nps": "^5.10.0",
+        "nps-utils": "^1.7.0",
+        "vsce": "^1.81.1"
     }
 }
