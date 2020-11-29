@@ -1,8 +1,8 @@
 {
     "name": "vscode-gobstones",
-    "displayName": "Gobstones Language Support",
+    "displayName": "Gobstones Language Support for Visual Studio Code",
     "description": "Provides basic language support for the Gobstones didactic programming language in Visual Studio Code",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "engines": {
         "vscode": "^1.27.0"
     },
@@ -29,16 +29,37 @@
             "id": "gobstones",
             "aliases": ["Gobstones", "gobstones"],
             "extensions": ["gbs"],
-            "configuration": "./definitions/language-configuration.json"
+            "configuration": "./definitions/gobstones/language-configuration.json"
+        }, {
+            "id": "gobstones-gbb",
+            "aliases": ["Gobstones Board", "gobstones board"],
+            "extensions": ["gbb"],
+            "configuration": "./definitions/gbb/language-configuration.json"
+        }, {
+            "id": "xml",
+            "extensions": ["gbk"]
         }],
         "grammars": [{
             "language": "gobstones",
             "scopeName": "text.gobstones",
-            "path": "./definitions/gobstones.tmLanguage.json"
+            "path": "./definitions/gobstones/gobstones.tmLanguage.json"
+        }, {
+            "language": "gobstones-gbb",
+            "scopeName": "text.gobstones-gbb",
+            "path": "./definitions/gbb/gbb.tmLanguage.json"
         }],
         "snippets": [{
                 "language": "gobstones",
-                "path": "./definitions/gobstones.tmSnippet.json"
-        }]
+                "path": "./definitions/gobstones/gobstones.tmSnippet.json"
+        }, {
+            "language": "gobstones-gbb",
+            "path": "./definitions/gbb/gbb.tmSnippet.json"
+        }],
+        "configurationDefaults": {
+            "[xml]": {
+              "editor.wordWrap": "on",
+              "editor.quickSuggestions": false
+            }
+          }
     }
 }

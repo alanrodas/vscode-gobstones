@@ -1,0 +1,66 @@
+{
+	"GBB\\1.0": {
+		"prefix": "GBB\\1.0",
+		"body": [
+			"GBB\\1.0",
+			"size ${1:4} ${2:4}",
+			"cell ${5:0} ${6:0} Azul ${7:0} Negro ${8:0} Rojo ${9:0} Verde ${10:0}",
+			"head ${3:0} ${4:0}",
+			""
+		],
+		"description": "Basic Gobstones Board Definition Structure"
+	},
+	"GBB": {
+		"prefix": "GBB",
+		"body": [
+			"GBB\\1.0",
+			"size ${1:4} ${2:4}",
+			""
+		],
+		"description": "Basic Gobstones Board Definition Structure"
+	},
+	"Size": {
+		"prefix": "size",
+		"body": [
+			"size ${1:4} ${2:4}",
+			""
+		],
+		"description": "Board size definition"
+	},
+	"Cell": {
+		"prefix": "cell",
+		"body": [
+			"cell ${1:0} ${2:0} Azul ${3:0} Negro ${4:0} Rojo ${5:0} Verde ${6:0}",
+			""
+		],
+		"description": "Cell definition"
+	},
+	"Head": {
+		"prefix": "head",
+		"body": [
+			"head ${1:0} ${2:0}",
+			""
+		],
+		"description": "Head location definition"
+	},
+	"Azul": {
+		"prefix": "Azul",
+		"body": ["Azul ${1:0}"],
+		"description": "Blue stones amount"
+	},
+	"Negro": {
+		"prefix": "Negro",
+		"body": ["Negro ${1:0}"],
+		"description": "Black stones amount"
+	},
+	"Rojo": {
+		"prefix": "Rojo",
+		"body": ["Rojo ${1:0}"],
+		"description": "Red stones amount"
+	},
+	"Verde": {
+		"prefix": "Verde",
+		"body": ["Verde ${1:0}"],
+		"description": "Green stones amount"
+	},
+}

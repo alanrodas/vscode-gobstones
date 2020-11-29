@@ -55,7 +55,7 @@
 		"expressions": {
 			"patterns": [{
 				"name": "constant.numeric.gobstones",
-				"match": "[0-9]+"
+				"match": "\\b[0-9]+\\b"
 			},{
 				"name": "entity.name.variable",
 				"match": "\\b(Azul|Negro|Rojo|Verde)\\b"
@@ -82,7 +82,7 @@
 				"match": "\\b(primero|ultimo|resto|comienzo)\\b"
 			},{
 				"name": "constant.character.set.regexp",
-				"match": "(div|mod|not)"
+				"match": "\\b(div|mod|not)\\b"
 			},{
 				"name": "constant.character.set.regexp",
 				"match": "(->|<-|\\+|-|\\*|\\^)"

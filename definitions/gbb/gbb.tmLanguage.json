@@ -1,0 +1,26 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Gobstones Board",
+	"scopeName": "text.gobstones-gbb",
+	"fileTypes": [".gbb"],
+	"patterns": [{
+		"include": "#definitions" 
+	}],
+	"repository": {
+		"definitions": {
+			"patterns": [{
+				"name": "keyword.control.definition.gobstones-gbb",
+				"match": "\\b(size|cell|head)\\b"
+			},{
+				"name": "constant.other.color.gobstones-gbb",
+				"match": "\\b(Azul|Negro|Rojo|Verde|a|n|r|v)\\b"
+			},{
+				"name": "constant.language.format.gobstones-gbb",
+				"match": "\\b(GBB\\\\1.0|GBB|gbb)\\b"
+			},{
+				"name": "constant.numeric.gobstones-gbb",
+				"match": "[0-9]+"
+			}]
+		}
+	}
+}
