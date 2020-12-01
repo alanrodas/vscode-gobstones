@@ -79,7 +79,7 @@
 				"match": "\\b(minColor|maxColor|minDir|maxDir|minBool|maxBool)\\b"
 			},{
 				"name": "support.function.gobstones",
-				"match": "\\b(primero|ultimo|resto|comienzo)\\b"
+				"match": "\\b(primero|esVacía|resto|sinElPrimero)\\b"
 			},{
 				"name": "constant.character.set.regexp",
 				"match": "\\b(div|mod|not)\\b"
