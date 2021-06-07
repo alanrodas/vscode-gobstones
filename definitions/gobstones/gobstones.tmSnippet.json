@@ -1,15 +1,38 @@
 {
 	"Program": {
-		"prefix": "program",
+		"prefix": [
+			"prog",
+			"program"
+		],
+		"body": [
+			"program {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${1:...}.",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${2:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\t$3",
+			"}"
+		],
+		"description": "Estructura de un programa, con documentación."
+	},
+	"Program No Doc": {
+		"prefix": [
+			"prog:nodoc",
+			"program:nodoc"
+		],
 		"body": [
 			"program {",
 			"\t$0",
 			"}"
 		],
-		"description": "program structure"
+		"description": "Estructura de un programa, sin documentación"
 	},
 	"Interactive Program": {
-		"prefix": "interactive program",
+		"prefix": [
+			"iprog",
+			"interactive program"
+		],
 		"body": [
 			"interactive program {",
 			"\tINIT -> {${1:VaciarTablero()}}",
@@ -23,31 +46,203 @@
 			"\t$10",
 			"}"
 		],
-		"description": "interactive program structure"
+		"description": "Estructura de un programa interactivo"
 	},
 	"Procedure": {
-		"prefix": "procedure",
+		"prefix": [
+			"proc",
+			"procedure"
+		],
 		"body": [
-			"procedure ${1:MyProcedure}(${2:params}) {",
-			"\t$3",
+			"procedure ${1:MyProcedure}(${2:parámetro1}, ${3:parámetro2}) {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${4:...}.",
+					"\t\tPARÁMETROS:",
+					"\t\t\t* ${2}: ${5:tipo} - ${6:descripción}.",
+					"\t\t\t* ${3}: ${7:tipo} - ${8:descripción}.",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${9:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\t$10",
 			"}"
 		],
-		"description": "procedure definition"
+		"description": "Estructura de un procedimiento, con parámetros, con documentación"
+	},
+	"Procedure No Param": {
+		"prefix": [
+			"proc:noparam",
+			"procedure:noparam"
+		],
+		"body": [
+			"procedure ${1:MyProcedure}() {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${2:...}.",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${3:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\t$4",
+			"}"
+		],
+		"description": "Estructura de un procedimiento, sin parámetros, con documentación"
+	},
+	"Procedure No Doc": {
+		"prefix": [
+			"proc:nodoc",
+			"procedure:nodoc"
+		],
+		"body": [
+			"procedure ${1:MyProcedure}(${2:parámetro1}, ${3:parámetro2}) {",
+			"\t$4",
+			"}"
+		],
+		"description": "Estructura de un procedimiento, con parámetros, sin documentación"
+	},
+	"Procedure No Param No Doc": {
+		"prefix": [
+			"proc:noparam:nodoc",
+			"procedure:noparam:nodoc"
+		],
+		"body": [
+			"procedure ${1:MyProcedure}() {",
+			"\t$2",
+			"}"
+		],
+		"description": "Estructura de un procedimiento, sin parámetros, sin documentación"
 	},
 	"Function": {
-		"prefix": "function",
+		"prefix": [
+			"fun",
+			"function"
+		],
 		"body": [
-			"function ${1:myFunction}(${2:params}) {",
+			"function ${1:myFunction}(${2:parámetro1}, ${3:parámetro2}) {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${4:...}.",
+					"\t\tPARÁMETROS:",
+					"\t\t\t* ${2}: ${5:tipo} - ${6:descripción}.",
+					"\t\t\t* ${3}: ${7:tipo} - ${8:descripción}.",
+					"\t\tTIPO: ${9:Tipo}",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${10:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\t$11",
+			"\treturn ($12)",
+			"}"
+		],
+		"description": "Estructura de Función con procesamiento, con parámetros, con documentación"
+	},
+	"Function Simple": {
+		"prefix": [
+			"fun:simple",
+			"function:simple"
+		],
+		"body": [
+			"function ${1:myFunction}(${2:parámetro1}, ${3:parámetro2}) {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${4:...}.",
+					"\t\tPARÁMETROS:",
+					"\t\t\t* ${2}: ${5:tipo} - ${6:descripción}.",
+					"\t\t\t* ${3}: ${7:tipo} - ${8:descripción}.",
+					"\t\tTIPO: ${9:Tipo}",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${10:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\treturn ($11)",
+			"}"
+		],
+		"description": "Estructura de Función simple, con parámetros, con documentación"
+	},
+	"Function No Param": {
+		"prefix": [
+			"fun:noparam",
+			"function:noparam"
+		],
+		"body": [
+			"function ${1:myFunction}() {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${2:...}.",
+					"\t\tTIPO: ${3:Tipo}",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${4:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\t$5",
+			"\treturn ($6)",
+			"}"
+		],
+		"description": "Estructura de Función con procesamiento, sin parámetros, con documentación"
+	},
+	"Function Simple No Param": {
+		"prefix": [
+			"fun:simple:noparam",
+			"function:simple:noparam"
+		],
+		"body": [
+			"function ${1:myFunction}() {",
+				"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${2:...}.",
+					"\t\tTIPO: ${3:Tipo}",
+					"\t\tPRECONDICIONES:",
+					"\t\t\t* ${4:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\treturn ($5)",
+			"}"
+		],
+		"description": "Estructura de Función simple, sin parámetros, con documentación"
+	},
+	"Function No Doc": {
+		"prefix": [
+			"fun:nodoc",
+			"function:nodoc"
+		],
+		"body": [
+			"function ${1:myFunction}(${2:parámetro1}, ${3:parámetro2}) {",
 			"\t$4",
+			"\treturn ($5)",
+			"}"
+		],
+		"description": "Estructura de Función con procesamiento, con parámetros, sin documentación"
+	},
+	"Function Simple No Doc": {
+		"prefix": [
+			"fun:simple:nodoc",
+			"function:simple:nodoc"
+		],
+		"body": [
+			"function ${1:myFunction}(${2:parámetro1}, ${3:parámetro2}) {",
+			"\treturn ($4)",
+			"}"
+		],
+		"description": "Estructura de Función simple, con parámetros, sin documentación"
+	},
+	"Function No Param No Doc": {
+		"prefix": [
+			"fun:noparam:nodoc",
+			"function:noparam:nodoc"
+		],
+		"body": [
+			"function ${1:myFunction}() {",
+			"\t$2",
 			"\treturn ($3)",
 			"}"
 		],
-		"description": "function definition"
+		"description": "Estructura de Función con procesamiento, sin parámetros, sin documentación"
+	},
+	"Function Simple No Param No Doc": {
+		"prefix": [
+			"fun:simple:noparam:nodoc",
+			"function:simple:noparam:nodoc"
+		],
+		"body": [
+			"function ${1:myFunction}() {",
+			"\treturn ($2)",
+			"}"
+		],
+		"description": "Estructura de Función simple, sin parámetros, sin documentación"
 	},
 	"Return": {
 		"prefix": "return",
 		"body": ["return ($1)"],
-		"description": "return construct"
+		"description": "Construcción de return"
 	},
 	"Type": {
 		"prefix": "type",
@@ -56,10 +251,10 @@
 			"\t$3",
 			"}"
 		],
-		"description": "type definition"
+		"description": "Definición de tipo personalizado"
 	},
 	"Type Variant": {
-		"prefix": "type:variant",
+		"prefix": "tvar",
 		"body": [
 			"type ${1:TypeName} is variant {",
 			"\tcase ${2:ConstructorName} {$3}",
@@ -67,10 +262,10 @@
 			"\tcase ${6:ConstructorName} {$7}",
 			"}"
 		],
-		"description": "variant type definition"
+		"description": "Definición de un tipo variante"
 	},
 	"Type Record": {
-		"prefix": "type:record",
+		"prefix": "trec",
 		"body": [
 			"type ${1:TypeName} is record {",
 			"\tfield ${2:fieldName}",
@@ -78,35 +273,21 @@
 			"\tfield ${4:fieldName}",
 			"}"
 		],
-		"description": "record type definition"
-	},
-	"Record": {
-		"prefix": "record",
-		"body": [
-			"record"
-		],
-		"description": "recorJ keyword"
-	},
-	"Variant": {
-		"prefix": "variant",
-		"body": [
-			"variant"
-		],
-		"description": "variant keyword"
+		"description": "Definición de un tipo registro"
 	},
 	"Case": {
 		"prefix": "case",
 		"body": [
 			"case {$1:ConstructorName} {$2}"
 		],
-		"description": "case construct"
+		"description": "Definición de constructor para un tipo variante"
 	},
 	"Field": {
 		"prefix": "field",
 		"body": [
 			"field {$1:fieldName}"
 		],
-		"description": "field construct"
+		"description": "Definición de campo para un tipo registro o constructor de variante"
 	},
 	"If": {
 		"prefix": "if",
@@ -115,7 +296,7 @@
 			"\t$2",
 			"}"
 		],
-		"description": "simple if structure"
+		"description": "Alternativa condicional en comandos con una sola rama"
 	},
 	"Elseif": {
 		"prefix": "elseif",
@@ -124,7 +305,7 @@
 			"\t$2",
 			"}"
 		],
-		"description": "simple elseif structure"
+		"description": "Rama de Alternativa condicional con caso adicional"
 	},
 	"Else": {
 		"prefix": "else",
@@ -133,7 +314,7 @@
 			"\t$1",
 			"}"
 		],
-		"description": "simple else structure"
+		"description": "Rama de caso contrario en alternativa condicional"
 	},
 	"If Else": {
 		"prefix": "if:else",
@@ -144,7 +325,7 @@
 			"\t$3",
 			"}"
 		],
-		"description": "if structure with an else case"
+		"description": "Alternativa condicional en comandos con rama si y sino"
 	},
 	"If Elseif Else": {
 		"prefix": "if:elseif:else",
@@ -157,7 +338,7 @@
 			"\t$5",
 			"}"
 		],
-		"description": "if structure with elif and else cases"
+		"description": "Alternativa condicional en comandos con 3 ramas"
 	},
 	"Switch": {
 		"prefix": "switch",
@@ -168,7 +349,7 @@
 			"\t_ -> {$6}",
 			"}"
 		],
-		"description": "switch pattern matching structure"
+		"description": "Alternativa indexada en comandos"
 	},
 	"Choose": {
 		"prefix": "choose",
@@ -179,30 +360,23 @@
 			"\t${5:value} otherwise",
 			"}"
 		],
-		"description": "choose expresion structure"
+		"description": "Alternativa condicional en expresiones"
 	},
 	"When": {
 		"prefix": "when",
 		"body": [
 			"when ($1)"
 		],
-		"description": "when condition construct"
-	},
-	"Otherwise": {
-		"prefix": "otherwise",
-		"body": [
-			"otherwise"
-		],
-		"description": "otherwise condition construct"
+		"description": "Rama en alternativa condicional de expresiones"
 	},
 	"Repeat": {
 		"prefix": "repeat",
 		"body": [
-			"repeat (${1:times}) {",
+			"repeat (${1:condition}) {",
 			"\t$2",
 			"}"
 		],
-		"description": "repeat structure"
+		"description": "Repetición simple en comandos"
 	},
 	"While": {
 		"prefix": "while",
@@ -211,7 +385,7 @@
 			"\t$2",
 			"}"
 		],
-		"description": "while structure"
+		"description": "Repetición condicional en comandos"
 	},
 	"Foreach": {
 		"prefix": "foreach",
@@ -220,557 +394,540 @@
 			"\t$3",
 			"}"
 		],
-		"description": "foreach structure"
-	},
-	"Let": {
-		"prefix": "let",
-		"body": [
-			"let "
-		],
-		"description": "let keyword"
-	},
-	"Not": {
-		"prefix": "not",
-		"body": [
-			"not "
-		],
-		"description": "not keyword"
-	},
-	"Mod": {
-		"prefix": "mod",
-		"body": [
-			"mod "
-		],
-		"description": "moJ keyword"
-	},
-	"Div": {
-		"prefix": "div",
-		"body": [
-			"div "
-		],
-		"description": "div keyword"
+		"description": "Repetición Indexada en comandos"
 	},
 	"Mover": {
 		"prefix": "Mover",
 		"body": ["Mover(${1:dirección})"],
-		"description": "Mover command"
+		"description": "Comando primitivo Mover"
 	},
 	"Poner": {
 		"prefix": "Poner",
 		"body": ["Poner(${1:color})"],
-		"description": "Poner command"
+		"description": "Comando primitivo Poner"
 	},
 	"Sacar": {
 		"prefix": "Sacar",
 		"body": ["Sacar(${1:color})"],
-		"description": "Sacar command"
+		"description": "Comando primitivo Sacar"
 	},
 	"IrAlBorde": {
 		"prefix": "IrAlBorde",
 		"body": ["IrAlBorde(${1:dirección})"],
-		"description": "IrAlBorde command"
+		"description": "Comando primitivo IrAlBorde"
 	},
 	"Vaciar Tabler": {
 		"prefix": "VaciarTablero",
 		"body": ["VaciarTablero()"],
-		"description": "VaciarTablero command"
+		"description": "Comando primitivo VaciarTablero"
 	},
 	"BOOM": {
 		"prefix": "BOOM",
 		"body": ["BOOM(\"${1:ERROR MESSAGE}\")"],
-		"description": "BOOM command"
+		"description": "Comando primitivo BOOM"
 	},
 	"puedeMover": {
 		"prefix": "puedeMover",
 		"body": ["puedeMover(${1:dirección})"],
-		"description": "puedeMover function"
+		"description": "Expresión primitiva puedeMover"
 	},
 	"hayBolitas": {
 		"prefix": "hayBolitas",
 		"body": ["hayBolitas(${1:color})"],
-		"description": "hayBolitas function"
+		"description": "Expresión primitiva hayBolitas"
 	},
 	"nroBolitas": {
 		"prefix": "nroBolitas",
 		"body": ["nroBolitas(${1:color})"],
-		"description": "nroBolitas function"
+		"description": "Expresión primitiva nroBolitas"
 	},
 	"siguiente": {
 		"prefix": "siguiente",
 		"body": ["siguiente(${1:elemento})"],
-		"description": "siguiente function"
+		"description": "Operados de enumeración primitivo siguiente"
 	},
 	"opuesto": {
 		"prefix": "opuesto",
 		"body": ["opuesto(${1:elemento})"],
-		"description": "opuesto function"
+		"description": "Operados de enumeración primitivo opuesto"
 	},
 	"previo": {
 		"prefix": "previo",
 		"body": ["previo(${1:elemento})"],
-		"description": "previo function"
+		"description": "Operados de enumeración primitivo previo"
 	},
 	"minBool": {
 		"prefix": "minBool",
 		"body": ["minBool()"],
-		"description": "minBool function"
+		"description": "Expresión primitiva minBool"
 	},
 	"maxBool": {
 		"prefix": "maxBool",
 		"body": ["maxBool()"],
-		"description": "maxBool function"
+		"description": "Expresión primitiva maxBool"
 	},
 	"minDir": {
 		"prefix": "minDir",
 		"body": ["minDir()"],
-		"description": "minDir function"
+		"description": "Expresión primitiva minDir"
 	},
 	"maxDir": {
 		"prefix": "maxDir",
 		"body": ["maxDir()"],
-		"description": "maxDir function"
+		"description": "Expresión primitiva maxDir"
 	},
 	"minColor": {
 		"prefix": "minColor",
 		"body": ["minColor()"],
-		"description": "minColor function"
+		"description": "Expresión primitiva minColor"
 	},
 	"maxColor": {
 		"prefix": "maxColor",
 		"body": ["maxColor()"],
-		"description": "maxColor function"
+		"description": "Expresión primitiva maxColor"
+	},
+	"esVacía": {
+		"prefix": "esVacía",
+		"body": ["primero(${1:lista})"],
+		"description": "Operador de listas primitivo esVacía"
 	},
 	"primero": {
 		"prefix": "primero",
 		"body": ["primero(${1:lista})"],
-		"description": "primero function"
+		"description": "Operador de listas primitivo primero"
 	},
-	"ultimo": {
-		"prefix": "ultimo",
-		"body": ["ultimo(${1:lista})"],
-		"description": "ultimo function"
-	},
-	"resto": {
-		"prefix": "resto",
-		"body": ["resto(${1:lista})"],
-		"description": "resto function"
-	},
-	"comienzo": {
-		"prefix": "comienzo",
-		"body": ["comienzo(${1:lista})"],
-		"description": "comienzo function"
+	"sinElPrimero": {
+		"prefix": "sinElPrimero",
+		"body": ["sinElPrimero(${1:lista})"],
+		"description": "Operador de listas primitivo sinElPrimero"
 	},
 	"TIMEOUT": {
 		"prefix": "TIMEOUT",
 		"body": [
 			"TIMEOUT(${1:5000}) -> {$2}"
 		],
-		"description": "timeout match construct"
+		"description": "Evento de timeout"
 	},
 	"INIT": {
 		"prefix": "INIT",
 		"body": [
 			"INIT -> {$1}"
 		],
-		"description": "init match construct"
+		"description": "Evento de inicializacion"
 	},
 	"K_A": {
 		"prefix": "K_A",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}A -> {$2}"
 		],
-		"description": "A key match construct"
+		"description": "Evento de inicializacion para la presión de tecla A"
 	},
 	"K_B": {
 		"prefix": "K_B",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}B -> {$2}"
 		],
-		"description": "B key match construct"
+		"description": "Evento de inicializacion para la presión de tecla B"
 	},
 	"K_C": {
 		"prefix": "K_C",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}C -> {$2}"
 		],
-		"description": "C key match construct"
+		"description": "Evento de inicializacion para la presión de tecla C"
 	},
 	"K_D": {
 		"prefix": "K_D",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}D -> {$2}"
 		],
-		"description": "D key match construct"
+		"description": "Evento de inicializacion para la presión de tecla D"
 	},
 	"K_E": {
 		"prefix": "K_E",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}E -> {$2}"
 		],
-		"description": "E key match construct"
+		"description": "Evento de inicializacion para la presión de tecla E"
 	},
 	"K_F": {
 		"prefix": "K_F",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F -> {$2}"
 		],
-		"description": "F key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F"
 	},
 	"K_G": {
 		"prefix": "K_G",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}G -> {$2}"
 		],
-		"description": "G key match construct"
+		"description": "Evento de inicializacion para la presión de tecla G"
 	},
 	"K_H": {
 		"prefix": "K_H",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}H -> {$2}"
 		],
-		"description": "H key match construct"
+		"description": "Evento de inicializacion para la presión de tecla H"
 	},
 	"K_I": {
 		"prefix": "K_I",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}I -> {$2}"
 		],
-		"description": "I key match construct"
+		"description": "Evento de inicializacion para la presión de tecla I"
 	},
 	"K_J": {
 		"prefix": "K_J",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}J -> {$2}"
 		],
-		"description": "J key match construct"
+		"description": "Evento de inicializacion para la presión de tecla J"
 	},
 	"K_K": {
 		"prefix": "K_K",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}K -> {$2}"
 		],
-		"description": "K key match construct"
+		"description": "Evento de inicializacion para la presión de tecla K"
 	},
 	"K_L": {
 		"prefix": "K_L",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}L -> {$2}"
 		],
-		"description": "L key match construct"
+		"description": "Evento de inicializacion para la presión de tecla L"
 	},
 	"K_M": {
 		"prefix": "K_M",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}M -> {$2}"
 		],
-		"description": "M key match construct"
+		"description": "Evento de inicializacion para la presión de tecla M"
 	},
 	"K_N": {
 		"prefix": "K_N",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}N -> {$2}"
 		],
-		"description": "N key match construct"
+		"description": "Evento de inicializacion para la presión de tecla N"
 	},
 	"K_O": {
 		"prefix": "K_O",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}O -> {$2}"
 		],
-		"description": "O key match construct"
+		"description": "Evento de inicializacion para la presión de tecla O"
 	},
 	"K_P": {
 		"prefix": "K_P",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}P -> {$2}"
 		],
-		"description": "P key match construct"
+		"description": "Evento de inicializacion para la presión de tecla P"
 	},
 	"K_Q": {
 		"prefix": "K_Q",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}Q -> {$2}"
 		],
-		"description": "Q key match construct"
+		"description": "Evento de inicializacion para la presión de tecla Q"
 	},
 	"K_R": {
 		"prefix": "K_R",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}R -> {$2}"
 		],
-		"description": "R key match construct"
+		"description": "Evento de inicializacion para la presión de tecla R"
 	},
 	"K_S": {
 		"prefix": "K_S",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}S -> {$2}"
 		],
-		"description": "S key match construct"
+		"description": "Evento de inicializacion para la presión de tecla S"
 	},
 	"K_T": {
 		"prefix": "K_T",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}T -> {$2}"
 		],
-		"description": "T key match construct"
+		"description": "Evento de inicializacion para la presión de tecla T"
 	},
 	"K_U": {
 		"prefix": "K_U",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}U -> {$2}"
 		],
-		"description": "U key match construct"
+		"description": "Evento de inicializacion para la presión de tecla U"
 	},
 	"K_V": {
 		"prefix": "K_V",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}V -> {$2}"
 		],
-		"description": "V key match construct"
+		"description": "Evento de inicializacion para la presión de tecla V"
 	},
 	"K_W": {
 		"prefix": "K_W",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}W -> {$2}"
 		],
-		"description": "W key match construct"
+		"description": "Evento de inicializacion para la presión de tecla W"
 	},
 	"K_X": {
 		"prefix": "K_X",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}X -> {$2}"
 		],
-		"description": "X key match construct"
+		"description": "Evento de inicializacion para la presión de tecla X"
 	},
 	"K_Y": {
 		"prefix": "K_Y",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}Y -> {$2}"
 		],
-		"description": "Y key match construct"
+		"description": "Evento de inicializacion para la presión de tecla Y"
 	},
 	"K_Z": {
 		"prefix": "K_Z",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}Z -> {$2}"
 		],
-		"description": "Z key match construct"
+		"description": "Evento de inicializacion para la presión de tecla Z"
 	},
 	"K_1": {
 		"prefix": "K_1",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}1 -> {$2}"
 		],
-		"description": "1 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 1"
 	},
 	"K_2": {
 		"prefix": "K_2",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}2 -> {$2}"
 		],
-		"description": "2 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 2"
 	},
 	"K_3": {
 		"prefix": "K_3",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}3 -> {$2}"
 		],
-		"description": "3 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 3"
 	},
 	"K_4": {
 		"prefix": "K_4",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}4 -> {$2}"
 		],
-		"description": "4 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 4"
 	},
 	"K_5": {
 		"prefix": "K_5",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}5 -> {$2}"
 		],
-		"description": "5 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 5"
 	},
 	"K_6": {
 		"prefix": "K_6",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}6 -> {$2}"
 		],
-		"description": "6 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 6"
 	},
 	"K_7": {
 		"prefix": "K_7",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}7 -> {$2}"
 		],
-		"description": "7 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 7"
 	},
 	"K_8": {
 		"prefix": "K_8",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}8 -> {$2}"
 		],
-		"description": "8 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 8"
 	},
 	"K_9": {
 		"prefix": "K_9",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}9 -> {$2}"
 		],
-		"description": "9 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 9"
 	},
 	"K_0": {
 		"prefix": "K_0",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}0 -> {$2}"
 		],
-		"description": "0 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla 0"
 	},
 	"K_F1": {
 		"prefix": "K_F1",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F1 -> {$2}"
 		],
-		"description": "F1 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F1"
 	},
 	"K_F2": {
 		"prefix": "K_F2",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F2 -> {$2}"
 		],
-		"description": "F2 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F2"
 	},
 	"K_F3": {
 		"prefix": "K_F3",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F3 -> {$2}"
 		],
-		"description": "F3 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F3"
 	},
 	"K_F4": {
 		"prefix": "K_F4",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F4 -> {$2}"
 		],
-		"description": "F4 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F4"
 	},
 	"K_F5": {
 		"prefix": "K_F5",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F5 -> {$2}"
 		],
-		"description": "F5 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F5"
 	},
 	"K_F6": {
 		"prefix": "K_F6",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F6 -> {$2}"
 		],
-		"description": "F6 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F6"
 	},
 	"K_F7": {
 		"prefix": "K_F7",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F7 -> {$2}"
 		],
-		"description": "F7 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F7"
 	},
 	"K_F8": {
 		"prefix": "K_F8",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F8 -> {$2}"
 		],
-		"description": "F8 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F8"
 	},
 	"K_F9": {
 		"prefix": "K_F9",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F9 -> {$2}"
 		],
-		"description": "F9 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F9"
 	},
 	"K_F10": {
 		"prefix": "K_F10",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F10 -> {$2}"
 		],
-		"description": "F10 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F10"
 	},
 	"K_F11": {
 		"prefix": "K_F11",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F11 -> {$2}"
 		],
-		"description": "F11 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F11"
 	},
 	"K_F12": {
 		"prefix": "K_F12",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}F12 -> {$2}"
 		],
-		"description": "F12 key match construct"
+		"description": "Evento de inicializacion para la presión de tecla F12"
 	},
 	"K_ARROW_UP": {
 		"prefix": "K_ARROW_UP",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_UP -> {$2}"
 		],
-		"description": "up arrow key match construct"
+		"description": "Evento de inicializacion para la presión de tecla flecha arriba"
 	},
 	"K_ARROW_DOWN": {
 		"prefix": "K_ARROW_DOWN",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_DOWN -> {$1}"
 		],
-		"description": "down arrow key match construct"
+		"description": "Evento de inicializacion para la presión de tecla flecha abajo"
 	},
 	"K_ARROW_LEFT": {
 		"prefix": "K_ARROW_LEFT",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_LEFT -> {$2}"
 		],
-		"description": "left arrow key match construct"
+		"description": "Evento de inicializacion para la presión de tecla flecha izquierda"
 	},
 	"K_ARROW_RIGHT": {
 		"prefix": "K_ARROW_RIGHT",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ARROW_RIGHT -> {$1}"
 		],
-		"description": "right arrow key match construct"
+		"description": "Evento de inicializacion para la presión de tecla flecha derecha"
 	},
 	"K_ENTER": {
 		"prefix": "K_ENTER",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ENTER -> {$2}"
 		],
-		"description": "enter key up match construct"
+		"description": "Evento de inicializacion para la presión de tecla enter"
 	},
 	"K_SPACE": {
 		"prefix": "K_SPACE",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}SPACE -> {$1}"
 		],
-		"description": "space key down match construct"
+		"description": "Evento de inicializacion para la presión de tecla barra espaciadora"
 	},
 	"K_TAB": {
 		"prefix": "K_TAB",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}TAB -> {$2}"
 		],
-		"description": "tab key up match construct"
+		"description": "Evento de inicializacion para la presión de tecla tab"
 	},
 	"K_BACKSPACE": {
 		"prefix": "K_BACKSPACE",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}BACKSPACE -> {$1}"
 		],
-		"description": "backspace key down match construct"
+		"description": "Evento de inicializacion para la presión de tecla borrar"
 	},
 	"K_ESCAPE": {
 		"prefix": "K_ESCAPE",
 		"body": [
 			"K${1|_,CTRL_,ALT_,SHIFT_,CTRL_ALT_,CTRL_SHIFT_,ALT_SHIFT_,CTRL_ALT_SHIFT_|}ESCAPE -> {$2}"
 		],
-		"description": "escape key up match construct"
+		"description": "Evento de inicializacion para la presión de tecla escape"
+	},
+	"Documentation":{
+		"prefix":[
+			"doc"
+		],
+		"body": [
+			"\t$BLOCK_COMMENT_START", "\t\tPROPÓSITO:  ${1:Propósito}.",
+				"\t\tPARÁMETROS:",
+				"\t\t\t* ${2:parámetro1}: ${3:Tipo} - ${4:Descripción}.",
+				"\t\t\t* ${5:parámetro2}: ${6:Tipo} - ${7:Descripción}.",
+				"\t\tTIPO: ${8:Tipo}",
+				"\t\tPRECONDICIONES:",
+				"\t\t\t* ${9:precondición1}.",
+				"\t$BLOCK_COMMENT_END"
+		],
+		"description": "Documentación completa para procedimienos o funciones"
 	}
 }

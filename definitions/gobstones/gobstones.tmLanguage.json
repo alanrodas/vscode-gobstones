@@ -16,81 +16,87 @@
 	"repository": {
 		"definitions": {
 			"patterns": [{
-				"name": "storage.type.gobstones",
+				"name": "storage.modifier.program.gobstones",
 				"match": "\\b(program|interactive|return)\\b"
 			},{
-				"name": "keyword.operator.quantifier.regexp",
+				"name": "storage.type.typedef.gobstones",
 				"match": "\\b(type|is|record|variant|case|field)\\b"
 			},{
 				"match": "\\b(function)(\\s+)(\\w+)",
 				"captures": {
-					"1": { "name": "storage.type.gobstones" },
-					"3": { "name": "entity.name.function.gobstones" }
+					"1": { "name": "storage.type.function.gobstones" },
+					"3": { "name": "entity.name.function.fundef.gobstones" }
 				 }
 			},{
 				"match": "\\b(procedure)(\\s+)(\\w+)",
 				"captures": {
-					"1": { "name": "storage.type.gobstones" },
-					"3": { "name": "entity.name.type.gobstones" }
+					"1": { "name": "storage.type.procedure.gobstones" },
+					"3": { "name": "entity.name.type.procdef.gobstones" }
 				 }
 			}]
 		},
 		"commands": {
 			"patterns": [
 				{
-					"name": "keyword.control.gobstones",
+					"name": "support.class.command.builtin.gobstones",
 					"match": "\\b(Poner|Mover|Sacar|IrAlBorde|VaciarTablero)\\b"
 				},{
-					"name": "keyword.control.gobstones",
+					"name": "keyword.control.command.gobstones",
 					"match": "\\b(if|elseif|else|switch|to|repeat|while|foreach|in|let)\\b"
 				},{
-					"name": "keyword.control.gobstones",
+					"name": "keyword.control.command.assign.gobstones",
 					"match": ":="
 				},{
-					"name": "constant.character.set.regexp",
+					"name": "invalid.deprecated.command.boom.gobstones",
 					"match": "\\b(BOOM)\\b"
 				}
 			]
 		},
 		"expressions": {
 			"patterns": [{
-				"name": "constant.numeric.gobstones",
+				"name": "constant.numeric.expression.number.gobstones",
 				"match": "\\b[0-9]+\\b"
 			},{
-				"name": "entity.name.variable",
+				"name": "support.constant.expression.color.gobstones",
 				"match": "\\b(Azul|Negro|Rojo|Verde)\\b"
 			},{
-				"name": "entity.name.variable",
+				"name": "support.constant.expression.dir.gobstones",
 				"match": "\\b(Norte|Sur|Este|Oeste)\\b"
 			},{
-				"name": "entity.name.variable",
+				"name": "support.constant.expression.bool.gobstones",
 				"match": "\\b(True|False)\\b"
+			}, {
+				"name": "invalid.deprecated.expression.boom.gobstones",
+				"match": "\\b(boom)\\b"
 			}]
 		},
 		"functions": {
 			"patterns": [{
-				"name": "support.function.gobstones",
+				"name": "keyword.control.expression.gobstones",
 				"match": "\\b(choose|when|otherwise)\\b"
 			},{
-				"name": "support.function.gobstones",
+				"name": "support.function.expression.builtin.gobstones",
 				"match": "\\b(hayBolitas|nroBolitas|siguiente|opuesto|previo|puedeMover)\\b"
 			},{
-				"name": "support.function.gobstones",
+				"name": "support.function.expression.builtin.gobstones",
 				"match": "\\b(minColor|maxColor|minDir|maxDir|minBool|maxBool)\\b"
 			},{
-				"name": "support.function.gobstones",
+				"name": "support.function.expression.builtin.gobstones",
 				"match": "\\b(primero|esVacía|resto|sinElPrimero)\\b"
 			},{
-				"name": "constant.character.set.regexp",
-				"match": "\\b(div|mod|not)\\b"
+				"name": "support.function.expression.aritmetic.gobstones",
+				"match": "\\b(div|mod)\\b"
 			},{
-				"name": "constant.character.set.regexp",
+				"name": "support.function.expression.logic.gobstones",
+				"match": "\\b(not)\\b"
+			},{
+				"name": "constant.character.set.regexp.expression.aritmetic.gobstones",
 				"match": "(->|<-|\\+|-|\\*|\\^)"
 			},{
-				"name": "constant.character.set.regexp",
+				"name": "constant.character.set.regexp.expression.logic.gobstones",
 				"match": "(\\&\\&|\\|\\|)"
 			},{
-				"name": "constant.character.set.regexp",
+				"name": "constant.character.set.regexp.expression.comparisson.gobstones",
 				"match": "(\\=\\=|\\/=|\\<\\>|\\>=|\\<=)"
 			}]
 		},
@@ -103,6 +109,10 @@
 		},
 		"comments": {
 			"patterns": [{
+				"name": "comment.block.documentation.gobstones",
+				"begin": "\\/\\*\\*",
+				"end": "\\*\\/"
+			},{
 				"name": "comment.block.gobstones",
 				"begin": "\\/\\*",
 				"end": "\\*\\/"
