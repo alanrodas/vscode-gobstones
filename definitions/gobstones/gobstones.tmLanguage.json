@@ -42,7 +42,7 @@
 					"match": "\\b(Poner|Mover|Sacar|IrAlBorde|VaciarTablero)\\b"
 				},{
 					"name": "keyword.control.command.gobstones",
-					"match": "\\b(if|elseif|else|switch|to|repeat|while|foreach|in|let)\\b"
+					"match": "\\b(if|then|elseif|else|switch|to|repeat|while|foreach|in|let)\\b"
 				},{
 					"name": "keyword.control.command.assign.gobstones",
 					"match": ":="
@@ -109,10 +109,6 @@
 		},
 		"comments": {
 			"patterns": [{
-				"name": "comment.block.documentation.gobstones",
-				"begin": "\\/\\*\\*",
-				"end": "\\*\\/"
-			},{
 				"name": "comment.block.gobstones",
 				"begin": "\\/\\*",
 				"end": "\\*\\/"

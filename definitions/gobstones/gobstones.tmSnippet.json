@@ -257,9 +257,9 @@
 		"prefix": "tvar",
 		"body": [
 			"type ${1:TypeName} is variant {",
-			"\tcase ${2:ConstructorName} {$3}",
-			"\tcase ${4:ConstructorName} {$5}",
-			"\tcase ${6:ConstructorName} {$7}",
+			"\tcase ${2:ConstructorName}\t\t{$3}",
+			"\tcase ${4:ConstructorName}\t\t{$5}",
+			"\tcase ${6:ConstructorName}\t\t{$7}",
 			"}"
 		],
 		"description": "Definición de un tipo variante"
@@ -268,9 +268,14 @@
 		"prefix": "trec",
 		"body": [
 			"type ${1:TypeName} is record {",
-			"\tfield ${2:fieldName}",
-			"\tfield ${3:fieldName}",
-			"\tfield ${4:fieldName}",
+			"\t$BLOCK_COMMENT_START",
+					"\t\tPROPÓSITO:  ${2:...}.",
+					"\t\tINVARIANTES DE REPRESENTACIÓN:",
+					"\t\t\t* ${3:...}.",
+				"\t$BLOCK_COMMENT_END",
+			"\tfield ${4:fieldName}\t\t// {5:Tipo}",
+			"\tfield ${6:fieldName}\t\t// {7:Tipo}",
+			"\tfield ${8:fieldName}\t\t// {9:Tipo}",
 			"}"
 		],
 		"description": "Definición de un tipo registro"
@@ -285,7 +290,7 @@
 	"Field": {
 		"prefix": "field",
 		"body": [
-			"field {$1:fieldName}"
+			"field {$1:fieldName}\t\t// {2:Tipo}"
 		],
 		"description": "Definición de campo para un tipo registro o constructor de variante"
 	},
@@ -500,6 +505,11 @@
 		"prefix": "sinElPrimero",
 		"body": ["sinElPrimero(${1:lista})"],
 		"description": "Operador de listas primitivo sinElPrimero"
+	},
+	"boom": {
+		"prefix": "boom",
+		"body": ["boom(\"${1:ERROR MESSAGE}\")"],
+		"description": "Expresión primitivo BOOM"
 	},
 	"TIMEOUT": {
 		"prefix": "TIMEOUT",
